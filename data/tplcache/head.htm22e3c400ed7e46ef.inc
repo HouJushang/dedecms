@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <?php
 $z[0]=Array("global","",97,122);
+=======
+<?php
+$z[0]=Array("global","",179,204);
+>>>>>>> 0de3eadd89df43824345d3460ca5c7da9c8c66bd
 $z[0][4]=array();
 $z[0][4]['name']="cfg_cmsurl";
 $z[1]=Array("global","",184,209);
