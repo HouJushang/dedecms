@@ -126,7 +126,6 @@ document.write('<embed src="{dede:global.cfg_templeturl /}/default/images/bcastr
     </dd>
    </dl>
   </div>
-  <div id="leftAD1" style="margin:10px auto">{dede:mda name='700x90'/}</div>
   <!-- /picnews -->
   <div class="listbox"> {dede:channelartlist}
    <dl class="tbox">
@@ -144,73 +143,7 @@ document.write('<embed src="{dede:global.cfg_templeturl /}/default/images/bcastr
  </div>
  <!-- /pleft -->
  <div class="pright">
-  <div class="usercenter">
-   <dl class="tbox light">
-    <dt class='light'> <strong>互动中心</strong> <span class="label"> <a href="#" _for="uc_digg">踩踩</a> <a href="#" _for="uc_comment">评论</a> <a href="#" _for="uc_member">会员</a> </span> </dt>
-    <dd id="loading"> 正在载入,请稍候... </dd>
-    <dd id="uc_digg">
-     <ul class="f1">
-      {dede:arclist orderby='scores' row='8' subday='30' titlelen='42'}
-      <li> <a href="[field:arcurl/]">[field:title/]</a> <span><small>点击:</small>[field:click/]</span> <span><small>评价:</small>[field:scores/]</span></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-    <!-- /uc_digg -->
-    <dd id="uc_comment">
-     <ul class="f2">
-      {dede:feedback row='5' titlelen='24' infolen='80'}
-      <li> <small><a href="#" class="username">[field:username function="(@me=='guest' ? '游客' : @me)"/]</a> 评论 <a href="[field:global.cfg_phpurl/]/feedback.php?aid=[field:aid/]" class="title">[field:title/]</a></small>
-       <p>[field:msg/]</p>
-      </li>
-      {/dede:feedback}
-     </ul>
-    </dd>
-    <!-- /uc_comment -->
-    <dd id="uc_member" >
-     <div id="_userlogin">
-      <div class="userlogin">
-       <form name="userlogin" action="{dede:global.cfg_memberurl/}/index_do.php" method="POST">
-        <input type="hidden" name="fmdo" value="login" />
-        <input type="hidden" name="dopost" value="login" />
-        <input type="hidden" name="keeptime" value="604800" />
-        <div class="fb"><span>用户名:</span>
-         <input type="text" name="userid" size="20" class="ipt-txt" />
-        </div>
-        <div class="fb"><span>密码:</span>
-         <input type="password" name="pwd" size="20" class="ipt-txt" />
-        </div>
-        {dede:php}
-        if(preg_match("#2#", $safe_gdopen))
-        {
-        echo '
-        <div class="fb"><span>验证码:</span>
-         <input type="text" name="vdcode" size="8" class="ipt-txt" />
-         <img id="vdimgck" align="absmiddle" onClick="this.src=this.src+\'?\'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="'.$cfg_cmspath.'/include/vdimgck.php"/></div>
-        ';
-        }
-        {/dede:php}
-        <div class="submit">
-         <button type="submit" class="btn-1">登录</button>
-         <a href="{dede:global.cfg_memberurl/}/index_do.php?fmdo=user&dopost=regnew" >注册帐号</a> <a href="{dede:global.cfg_memberurl/}/resetpassword.php">忘记密码?</a> </div>
-       </form>
-      </div>
-     </div>
-     <!-- /userlogin -->
-     <script language="javascript" type="text/javascript">CheckLogin();</script>
-     <div class="latestlogin"> <strong>最近登陆的会员</strong>
-      <ul class="e7">
-       {dede:memberlist row=6 signlen=30}
-       <li><a href="[field:spaceurl/]" target="_blank"><img src="[field:face/]" alt='[field:spacename/]' width="52" height="52" />[field:uname/]</a></li>
-       {/dede:memberlist}
-      </ul>
-     </div>
-     <!-- /latestlogin -->
-    </dd>
-    <!-- /uc_member -->
-   </dl>
-  </div>
   <!-- /usercenter -->
-  <div id="rightAD1" style="margin:10px auto">{dede:mda name='250x250_SSP'/}</div>
   <div class="commend mt1">
    <dl class="tbox light">
     <dt class='light'><strong>推荐内容</strong></dt>
@@ -223,8 +156,6 @@ document.write('<embed src="{dede:global.cfg_templeturl /}/default/images/bcastr
     </dd>
    </dl>
   </div>
-  <!-- /commend -->
-  <div id="rightAD1" style="margin:10px auto">{dede:mda name='250x250'/}</div>
   <div class="hot mt1">
    <dl class="tbox light">
     <dt class='light'><strong>本月热点</strong></dt>
@@ -237,15 +168,8 @@ document.write('<embed src="{dede:global.cfg_templeturl /}/default/images/bcastr
     </dd>
    </dl>
   </div>
-  <div class="vote mt1">
-   <dl class="tbox light">
-    <dt class='light'><strong>投票调查</strong></dt>
-    <script language="javascript" src="{dede:global.cfg_cmsurl/}/data/vote/vote_1.js"></script>
-   </dl>
-  </div>
   <!-- /vote -->
   {dede:qrcode/}
-  
  </div>
  <!-- /pleft -->
 </div>
@@ -268,7 +192,6 @@ document.write('<embed src="{dede:global.cfg_templeturl /}/default/images/bcastr
  </dl>
 </div>
 <!-- /flink -->
-<div id="footAD" style="margin:10px auto; width:726px">{dede:mda name='728x90'/}</div>
 {dede:include filename="footer.htm"/}
 <!-- /footer -->
 </body>
